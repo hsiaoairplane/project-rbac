@@ -4,7 +4,7 @@ metadata:
   name: project-hsiaoairplane-role
   namespace: hsiaoairplane
   labels:
-    distribute-product-rbac: "true"
+    project-rbac: "true"
 rules:
 - apiGroups: [""]
   resources: ["configmaps"]
