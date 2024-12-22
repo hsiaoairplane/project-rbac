@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: project-hsiaoairplane-role
+  labels:
+    product-rbac: "true"
 rules:
 - apiGroups: [""]
   resources: ["configmaps"]
