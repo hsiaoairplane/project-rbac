@@ -1,10 +1,10 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
-  name: clone-role-rolebindings
+  name: sync-role-rolebindings
 spec:
   rules:
-    - name: clone-role-role
+    - name: sync-role
       match:
         resources:
           kinds:
@@ -21,8 +21,8 @@ spec:
             - rbac.authorization.k8s.io/v1/Role
           selector:
             matchLabels:
-              product-rbac: "true"
-    - name: clone-role-rolebindings
+              distribute-product-rbac: "true"
+    - name: sync-rolebindings
       match:
         resources:
           kinds:
@@ -39,4 +39,4 @@ spec:
             - rbac.authorization.k8s.io/v1/RoleBinding
           selector:
             matchLabels:
-              product-rbac: "true"
+              distribute-product-rbac: "true"
