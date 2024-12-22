@@ -1,0 +1,25 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: sync-hsiaoairplane-role
+spec:
+  generateExisting: true
+  rules:
+  - name: sync-role
+    match:
+      resources:
+        kinds:
+          - Namespace
+        selector:
+          matchLabels:
+            project: hsiaoairplane
+    generate:
+      namespace: "{{request.object.metadata.name}}"
+      synchronize: true
+      cloneList:
+        namespace: hsiaoairplane
+        kinds:
+          - rbac.authorization.k8s.io/v1/Role
+        selector:
+          matchLabels:
+            project-rbac: "true"
