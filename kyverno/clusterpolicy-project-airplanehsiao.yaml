@@ -3,6 +3,7 @@ kind: ClusterPolicy
 metadata:
   name: sync-airplanehsiao-role-rolebindings
 spec:
+  generateExisting: true
   rules:
     - name: sync-role
       match:
