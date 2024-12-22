@@ -1,8 +1,10 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
-  name: sync-role-rolebindings
+  name: sync-hsiaoairplane-role-rolebindings
 spec:
+  admission: true
+  background: true
   rules:
     - name: sync-role
       match:
