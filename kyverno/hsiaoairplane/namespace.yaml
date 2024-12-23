@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hsiaoairplane
+  labels:
+    project: hsiaoairplane
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: foo
+  labels:
+    project: hsiaoairplane
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: foobar
+  labels:
+    project: hsiaoairplane
